@@ -6,5 +6,11 @@ Algoritmo HolaMundo
 		Mostrar "aprobado"
 	FinMientras
 	
-	
+	Mientras Calificacion < 7 Hacer
+		Mostrar "Reprobado"
+		
+		Si Calificacion = 5
+			Mostrar "Mala Calificacion"
+		FinSi
+	FinMientras
 FinAlgoritmo
