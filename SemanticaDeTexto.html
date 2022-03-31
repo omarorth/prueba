@@ -1,0 +1,189 @@
+/* Semántica de texto */
+
+<h1>Estilo</h1>
+<ol>
+    <li></li>
+</ol>
+<p>Etiqueta para:  <b>negrita</b></p>
+<p>Etiqueta para:  <i>italica</i></p>
+<p>Etiqueta para:  <u>subrayado</u></p>
+<p>Etiqueta para:  <s>tachar</s></p>
+
+<h1>Semantico</h1>
+<h3>(sirve para que lo encuentre el buscador)</h3>
+<p>Etiqueta para:  <strong>texto importante</strong></p>
+<p>Etiqueta para:  <em>texto enfatizado</em></p>
+<p>Etiqueta para:  <del>texto borrado</del></p>
+<p>Etiqueta para:  <ins>texto insertado</ins></p>
+<p>Etiqueta para:  <q>texto entre comillas (quote)</q></p>
+<p>Etiqueta para:  <mark>texto marcado</mark></p>
+
+<p>Etiqueta para:  <code>codigo</code></p>
+<p>Etiqueta para:  <var>variable</var></p>
+<p>Etiqueta para:  <samp>ejemplo de código</samp></p>
+<p>Etiqueta para:  <kbd>entrada de teclado</kbd></p>
+<p>Etiqueta para:  <ruby>caracteres ideograficos asiáticos en general</ruby></p>
+<ruby>
+    明日 <rp>(</rp><rt>Ashita</rt><rp>)</rp>
+</ruby>
+<h2>RUBY</h2>
+<p>Representa a una ruby anotacion (caracteres ruby). 
+Ruby anotaciona pronunciacion asiaticos estas anotaciones son usualmente utilizadas como guía para caracteres poco conocidos</p>
+    
+<ruby>
+    明日 <rp>(</rp><rt>Ashita</rt><rp>)</rp> 
+</ruby> <br>
+<ruby>
+漢 <rt><rp>(</rp>ㄏㄢˋ<rp>)</rp></rt> <br>
+</ruby> <br>
+<ruby>
+    漢 <rp>(</rp><rt>kan</rt><rp>)</rp>
+    字 <rp>(</rp><rt>ji</rt><rp>)</rp>
+</ruby> <br>
+<h1>  漢 <rt><rp>(</rp>ㄏㄢˋ<rp>)</rp></rt> </h1> 
+</ruby>
+
+<p>Etiqueta para:  <big>texto grande</big></p> <!-- obsoleto -->
+<p>Etiqueta para:  <center>texto centrado</center></p> <!-- obsoleto -->
+<p>Etiqueta para:  <blink>texto parpadeando</blink></p> <!-- obsoleto-->
+
+<!-- bdo: Bi-Directional Overriding; dirección de escritura del texto -->
+<p><bdo dir="ltr">Omar</bdo></p>
+<p><bdo dir="rtl">Omar</bdo></p>
+
+<p>
+    Semántica: Perteneciente o relativo a la <q>significación de las palabras</q>. Esa es 
+    la definición de la <em>Real Academia de la Lengua Española</em> y es así de sencillo 
+    es entender este tipo de etiquetas del <strong>lenguaje HTML</strong>: <br>
+    Aquellas <del>que</del> dan un significado a las partes del documento. <br>
+    Por decirlo de otra forma, estamos ante etiquetas que indican qué es el contenido que 
+    contienen, en lugar de <mark>cómo se debe formatear</mark> al mostrar el documento 
+    <strong><em><q>HTML</q></em></strong> en un cliente web. <br>
+    Para que todas nuestras dudas se despejen, podemos echar mano de un ejemplo. <br>
+    Pensemos en la etiqueta <mark><strong>STRONG</strong></mark> ¿Qué nos indica? Que un 
+    texto debe resaltarse con mayor fuerza con respecto a otros textos que no sean <q>strong</q>, 
+    parecido a lo que nos indica la etiqueta <b>B</b>, que todavía es más concreta, al 
+    especificar que un texto debe ser colocado en <b>negrita</b>. Pensemos ahora en una 
+    etiqueta <mark>DIV</mark>, o <mark>P</mark> La primera es una <em>división</em> y P 
+    es un <em>párrafo</em>. Todo esto no son más 
+    que maneras de decirle al navegador cómo debe formatear una página, qué debe separar 
+    en un texto, en una división normal, o en un párrafo, etc. <br>
+</p>
+
+<hr> <!-- cambio de tema, línea horizontal -->
+
+<h2>Rutas absolutas</h2>
+<img src="https://www.informatica-hoy.com.ar/imagenes12/subir-archivos-internet.jpg" 
+    width="100px" height="100px" alt="Planeta Tierra" title="mundo en ascenso"> <!-- ruta absoluta -->
+<img src="https://dinamicasgrupales.com.ar/wp-content/uploads/2020/06/imagen1.webp" 
+    width="100px" height="100px" alt="Antilopes" title="antilopes posando"> <!-- ruta absoluta -->
+<img src="https://www.unioviedo.es/compnum/laboratorios_web/laborat03_intro_imagen/laborat03_02.png" 
+    width="100px" height="100px" alt="Mujer" title="mujer con sombrero"> <!-- ruta absoluta -->
+<img src="https://s3.amazonaws.com/public-catalog.crehana.com/images/files/3860c31d/f75a35cc.jpg" 
+    height="100px" alt="Pelirroja" title="pelirroja"> <!-- ruta absoluta -->
+<div>
+    <h2>Rutas relativas</h2>
+    <img src="./img/nero.webp" width="100px" height="100px" alt="Nero" title="nero"> <!-- ruta 
+        relativa -->
+    <img src="./img/Wilber-gimp.png" width="100px" alt="Wilber Gimp" title="Gimp"> <!-- ruta 
+relativa -->
+    <img src="./img/penelope-cruz.jpeg" height="100px" alt="Penelope Cruz"
+        title="Penelope Cruz"> <!-- ruta relativa -->
+    <img src="./img/gato-triste-trabajando.jpg" height="100px" alt="gato triste trabajando"
+        title="gato triste trabajando"> <!-- ruta relativa -->
+</div>
+
+<div>
+    <h2>Links absolutos</h2>
+    <p><a href="http://google.com">Google</a></p>
+    <p><a href="https://www.pdfdrive.com/" target="_blank">Pdf Drive</a></p>
+    <p><a href="https://www.freepik.es/" target="_blank">Imagenes</a></p>
+
+    <h2>Links relativos</h2>
+    <p><a href="./MiPrimeraPagina.html" target="_blank">Primera pagina</a></p>
+    <p><a href="./Diagrama de flujo Algoritmo cualitativo.drawio.png">
+        Algoritmo cualitativo</a></p>
+    <p><a href="./hipotenusa.cpp">hipotenusa.cpp</a></p>
+    <p><a href="./img/Montaje_de_CDMX.jpg">Foto CDMX</a></p>
+    <p><a href="./EstructurasDeControl.html" target="_blank">Estructuras de Control</a></p>
+
+    <h2>Links de imagen absolutos</h2>
+    <p><a href="https://www.gimp.org/">
+        <img src="./img/Wilber-gimp.png" width="100px" alt="Wilber Gimp" title="Gimp">
+        </a></p>
+    <p><a href="https://www.google.com/" target="_blank">
+        <img src="./img/logo-google.png"  width="100px" alt="Logo Google" title="Google">
+        </a></p>
+
+    <h2>Galeria de imagenes (thumbnails)</h2>
+    <p><a href="https://www.tooltyp.com/wp-content/uploads/2014/10/1900x920-8-beneficios-de-usar-imagenes-en-nuestros-sitios-web.jpg"
+        target="_blank">
+        <img src="https://www.tooltyp.com/wp-content/uploads/2014/10/1900x920-8-beneficios-de-usar-imagenes-en-nuestros-sitios-web.jpg" alt=""
+        height="100px">
+        </a>
+        <a href="https://ep01.epimg.net/elpais/imagenes/2019/10/30/album/1572424649_614672_1572453030_noticia_normal.jpg"
+        target="_blank">
+        <img src="https://ep01.epimg.net/elpais/imagenes/2019/10/30/album/1572424649_614672_1572453030_noticia_normal.jpg" 
+        height="100px" alt="">
+        <a href="https://cdn.pixabay.com/photo/2021/08/25/20/42/field-6574455__480.jpg" target="_blank">
+            <img src="https://cdn.pixabay.com/photo/2021/08/25/20/42/field-6574455__480.jpg" height="100px" 
+            alt="">
+        </a>
+    </a>
+    </p>
+</div>
+<div>
+    <h2>Email</h2>
+    <p><a href="mailto:juan_perez@gmail.com?subject=Hola%20como%20estas">Envia email</a></p>
+</div>
+<div>
+    <h2>Whatsapp</h2>
+    <a href="https://api.whatsapp.com/send?phone=0123456789&text=Hola" target="_blank">
+        <img src="./img/icono-whatsapp.png" height="100px" alt="">
+    </a>
+    <h2>Telefono</h2>
+    <a href="tel:0123456789">
+        <img src="./img/icono-telefono.png" height="100px" alt="">
+    </a>
+</div>
+<div>
+    <h2>Protocolos</h2>
+    <h3>Conexion a una IP</h3>
+    <a href="http://192.168.1.132:8000/html">Conexion</a>
+    <h3>SSH</h3>
+    <a href="ssh:192.168.1.148">SSH</a>
+</div>
+
+<hr>
+
+<div style="color:red; background-color: burlywood;">
+    Soy un div
+</div>
+<br>
+<div style="border: 1px gray dotted">
+    Esto es un borde punteado
+</div>
+<br>
+<h3>Bandera de Alemania</h3>
+<div style="background-color: black; padding: 5px;"></div>
+<div style="background-color: red; padding: 5px;"></div>
+<div style="background-color: yellow; padding: 5px;"></div>
+<h3>Bandera de Armenia</h3>
+<div style="background-color: red; padding: 5px;"></div>
+<div style="background-color: blue; padding: 5px;"></div>
+<div style="background-color: yellow; padding: 5px;"></div>
+<h3>Bandera de Colombia</h3>
+<div style="background-color: yellow; padding: 5px;"></div>
+<div style="background-color: blue; padding: 5px;"></div>
+<div style="background-color: red; padding: 5px;"></div>
+<br>
+<h3>Escalera</h3>
+<div style="width: 10px; height: 15px; border: 1px gray dotted;">E</div>
+<div style="width: 20px; height: 15px; border: 1px gray dotted;">S</div>
+<div style="width: 30px; height: 15px; border: 1px gray dotted;">C</div>
+<div style="width: 40px; height: 15px; border: 1px gray dotted;">A</div>
+<div style="width: 50px; height: 15px; border: 1px gray dotted;">L</div>
+<div style="width: 60px; height: 15px; border: 1px gray dotted;">E</div>
+<div style="width: 70px; height: 15px; border: 1px gray dotted;">R</div>
+<div style="width: 80px; height: 15px; border: 1px gray dotted;">A</div>
+<br>
