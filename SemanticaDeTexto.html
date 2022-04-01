@@ -187,3 +187,50 @@ relativa -->
 <div style="width: 70px; height: 15px; border: 1px gray dotted;">R</div>
 <div style="width: 80px; height: 15px; border: 1px gray dotted;">A</div>
 <br>
+<h2>Selectores CSS</h2>
+<style> 
+    p {color: gray};
+</style>
+<p>Esto es un parrafo</p>
+<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Placeat id 
+    distinctio laudantium recusandae architecto quis explicabo modi aut quasi 
+    mollitia, ex doloribus vero exercitationem rerum incidunt sed quas 
+    obcaecati ducimus.
+</p> <!-- lorem -->
+<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Maiores, 
+    consequuntur ipsam voluptatum voluptates fugit non nam cumque ad debitis 
+    dignissimos sed reiciendis itaque labore officiis sint molestias perferendis voluptate odio!</p>
+<p>Lorem, ipsum dolor.</p> <!-- loremx3 -->
+
+<h3>Selector multiple</h3>
+<style>
+    /* Esto es un comentario */
+    h1, h2 {color: green};
+</style>
+
+<h3>Estilos</h3>
+<div style="font-size: 0.6rem; font-family: 'Franklin Gothic Medium';">
+    Probando tipo y tamaño de fuente</div>
+
+<p><h1>Encabezado h1</h1></p>
+<p><h4>Encabezado h4</h4></p>
+<p><h5>Encabezado h5</h5></p>
+
+<h2>Clases</h2>
+<style>
+    .mi-clase {background-color: plum;}
+</style>
+<div class="mi-clase">
+    <p>Fondo plum (ciruela)</p>
+</div>
+
+<h2>id</h2>
+<style>
+    #mi-id {font-weight: bold; font-size: 1.5rem;}
+</style>
+<div id="mi-id">
+    <p>Este id es el no. 1</p>
+</div>
+<div id="mi-id"> <!-- lo reconoce pero es mala práctica, sólo debe haber 1 -->
+    <p>Este id es el no.2 </p>
+</div>
