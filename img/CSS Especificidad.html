@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang=es>
+<head id=myHead>
+<meta charset=UTF-8 >  
+<link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css' integrity='sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm' crossorigin='anonymous'>
+<link rel="shortcut icon" href="https://cdn.rawgit.com/konpa/devicon/master/icons/css3/css3-plain.svg" type="image/svg">
+<title>CSS Especificidad </title>
+</head>
+
+<body>
+    <header>
+        
+      
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary" >  
+           <a class="navbar-brand navbar-light" href="00ccs01.html"> 
+          <img src="https://www.pngix.com/pngfile/big/193-1937198_image-result-for-css3-icon-css-logo-transparent.png" class="d-inline-block align-top" width="30" height="30" alt=""></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav">
+        <li class="nav-item active"> <a class="nav-link" target="_blank" href="00ccs01.html"> CSS <span class="sr-only">(current) </span></a></li>
+        <li class="nav-item"><a class="nav-link" target="_blank" href="00css-sintax.htm"> Sintaxis</a></li>
+        <li class="nav-item"><a class="nav-link" target="_blank" href="00css02-especificidad .html">Especificidad</a></li>
+        <li class="nav-item"> <a class="nav-link" target="_blank" href="framework/boot-01.html">Framework</a></li>
+  
+       <li class="nav-item dropdown "> 
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" 
+        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> </a>
+        <div class="dropdown-menu aria-labelledby navbarDropdownMenuLink">
+        <a class="dropdown-item" target="_blank" href="./Html/HTML-01-meta.html">HTML</a>
+        <a class="dropdown-item" target="_blank" href="indexaJS.html">JS</a> 
+        <a class="dropdown-item" target="_blank" href="./Shell/BashInfo.html">BASH</a> 
+      
+    
+      <li>  <form  method="Get" target="_blank" action="http://www.google.com/custom" class="form-inline my-2 my-lg-0">
+        <input class="form-control mr-sm-2" type="text" size="auto" name="q" placeholder="Buscar" aria-label="Search">
+         <input type="hidden" name="domains" value="https://www.w3schools.com/"> 
+        <button type="submit" name="sitesearch" value="https://www.w3schools.com/" class="btn btn-outline-success my-2 my-sm-0" >OK</button>
+      </form></li>
+        </div>
+          </ul>
+
+      </div> 
+       </nav>
+
+   </header>
+
+     <main class="container-fluid">
+
+
+<h1 class="display-5"  > Cascada y Herencia </h1>
+
+<p>CSS:cascada y la herencia (orden de aplicación), dos mecanismos de CSS que definen las reglas
+  que se aplican para decidir el valor final que toma una propiedad de un elemento concreto <br>
+  de una página web. <br>
+  En el cálculo se tiene que tener en cuenta el valor especificado, el valor calculado, el valor usado y finalmente el valor real.</p>
+
+  <h2>inherit </h2>
+  <p>es un valor permitido en todas las propiedades <br>
+  Hace que el elemento al cual se aplica tome el valor calculado de la propiedad de su elemento padre.</p>
+
+<pre>
+  Orden de Cascada
+
+Cuando se usan varias hojas de estilo, puede haber un conflicto sobre cual controla a un selector en particular.
+En estas situaciones, debe haber reglas para definir la regla de la hoja de estilo que prevalecerá.
+
+<table style="width:640px;">
+  <thead style="background-color: dodgerblue;font-weight: bolder;font-size: 30px;color:white">
+  <th></th><th>A</th> <th>B</th><th>C</th><th>D</th></thead>
+  <tbody style="background-color: lightblue;font-size:25px;font-family: Arial, Helvetica, sans-serif;">
+  <tr><td>#id {color:red;}</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>  
+  <tr><td>ul li.important {color:green;}</td>0<td>0</td><td>0</td><td>1</td><td>2</td></tr>
+  <tr><td>ul li {color:blue;}</td><td>0</td><td>0 </td> <td>0</td><td>2</td></tr>
+  <tr><td>li.important {color:yellow;}</td>0<td>0</td><td>1</td> <td>1</td><td>1</td></tr>
+  <tr><td>li {color:purple;}</td><td>0</td><td>0</td> <td>0</td><td>1</td></tr>
+  <tr><td> style="color:pink"</td><td>1</td><td>0</td> <td>0</td><td>0</td></tr>
+  </tbody>
+  </table>
+<img src="../Images/especificidad.jpg "width="50%">
+<pre>
+Las hojas de estilo también pueden primar sobre hojas de estilo en conflicto basándose en su nivel de especificidad,
+donde un estilo más específico siempre prevalecerá sobre uno menos específico.
+Simplemente es cuestión de contar para calcular la especificidad de un selector.
+a.Cuente el número de atributos ID en el selector.
+b.Cuente el número de atributos CLASS en el selector.
+c.Cuente el número nombres de etiquetas HTML en el selector.
+
+Finalmente, escriba los tres números en orden exacto sin espacios ni comas para obtener un número de tres dígitos. 
+#id1         {xxx} /* a=1 b=0 c=0 --> especificidad = 100 */ 
+UL UL LI.red {xxx} /* a=0 b=1 c=3 --> especificidad = 013 */
+LI.red       {xxx} /* a=0 b=1 c=1 --> especificidad = 011 */
+LI           {xxx} /* a=0 b=0 c=1 --> especificidad = 001 */
+La lista final de números que corresponden a selectores determinará fácilmente la especificidad,
+donde los números más altos priman sobre los más bajos. La siguiente es una lista de selectores ordenados por especificidad:
+¿Cómo se calcula la especificidad?
+La especificidad es una ponderación que se aplica a una declaración CSS determinada, determinada por el número de cada tipo de selector
+en el selector coincidente. Cuando varias declaraciones tienen la misma especificidad, la última declaración encontrada en el CSS 
+se aplica al elemento. La especificidad solo se aplica cuando el mismo elemento es el objetivo de múltiples declaraciones.
+Según las reglas CSS, los elementos directamente dirigidos siempre tendrán prioridad sobre las reglas que un elemento hereda de su antepasado.
+</pre>
+<h2>Orden de especificación</h2> 
+<pre>
+Para hacerlo sencillo, cuando dos reglas tienen el mismo peso, prima la última regla especificada
+
+Un ejemplo de especificidad con CSS
+Con el siguiente código CSS:
+
+
+p{
+background: crimson;//Especificidad de 1 punto
+}
+.pc{
+background: pink;//Especificidad de 10 puntos
+}
+p.pc{
+background: maroon;//Especificidad de 11 puntos
+}
+#pid{
+background: orange;//Especificidad de 100 puntos
+}
+p#pid{
+background: red;//Especificidad de 101 puntos
+}
+p.pc#pid{
+background:green;//Especificidad de 111 puntos
+}
+
+
+los estilos inline tendremos una especificidad puntuadao,
+un estilo inline recibe una puntuación de 1000. 
+
+
+La última regla gana
+usando exactamente los mismos selectores y haciendo uso de estilos diferentes.
+
+1
+h1 class="hello-header">Hello World!/h1
+
+.hello-header {
+  color: blue
+}
+ 
+.hello-header {
+  color: red
+}
+
+
+Los selectores de IDs invalidan a los selectores de atributos
+
+h1#hello-header {
+  color: green
+}
+
+h1[id=hello-header] {
+  color: red
+}
+Estos dos estilos se enfocan en el ID del elemento, pero la primera declaración lo hace usando el selector de ID (0100 puntos), 
+mientras que la segunda lo hace a través de un selector de atributos (0010 puntos).
+
+
+Selectores universales
+Los selectores universales se enfocan en cualquier elemento de la página en su totalidad. Este es un ejemplo de un selector universal:
+
+
+* {
+  color: green;
+}
+También pueden ser usados como selectores hijos (por ejemplo: div * {}). 
+Este tipo de selectores tiene una especificidad de 000
+
+
+
+
+Las siguientes características determinarán el resultado de hojas de estilo que se contraponen.
+
+<h2>! important </h2>
+Puede establecerse una regla como importante al especificar ! important. 
+Un estilo designado como importante prevalecerá sobre estilos contradictorios de similar nivel. 
+Asimismo, ya que tanto el autor y el lector pueden especificar reglas importantes, 
+la regla del autor primará sobre la regla del lector en casos de importancia. 
+Una muestra del uso de la sentencia ! important:
+BODY { background: url(bar.gif) white;
+       background-repeat: repeat-x ! important}
+
+Origen de las reglas (del autor frente a las del lector) 
+Como ya se mencionó, tanto los autores como los lectores tienen la capacidad de especificar hojas de estilo. 
+Cuando hay un conflicto entre reglas, las reglas del autor prevalecerán sobre las reglas del lector de similar peso.
+Tanto las hojas de estilo del autor como las del lector primarán sobre las hojas de estilo incorporadas del navegador. 
+
+Los autores deberían ser cautelosos con el empleo de reglas ! important ya que primarán sobre las reglas ! important del lector.
+Un usuario puede, por ejemplo, necesitar de grandes tamaños de fuentes o colores especiales debido a problemas de visión,
+y tal usuario querrá declarar que ciertas reglas de estilo sean ! important, ya que algunos estilos son vitales para que pueda leer una página.
+Cualquier regla ! important prevalecerá sobre las reglas normales, por lo que se aconseja a los autores usar reglas normales casi exclusivamente
+para asegurar que los usuarios con necesidades especiales de estilos puedan leer la página.
+
+
+</pre>
+<h1 class="display-5">Reglas de estilo CSS de usuario y de autor</h1>
+ <p>Veamos qué son las reglas de estilo de usuario, configuradas opcionalmente por cada usuario en su navegador,
+   y las reglas de estilo de autor, que define el desarrollador de cada web. </p>
+<ul>        
+<li> Las reglas de estilo de usuario (user stylesheet rules) las define cada persona en su navegador, a modo de configuración global, para todas las páginas que visita. </li><br>
+            
+<li> Las reglas de estilo de autor (author stylesheet rules) son las que definen los autores de las páginas, es decir, los diseñadores o desarrolladores de cada una de las páginas que visitamos. <br>
+ Por decirlo de otra forma, las hojas de estilo de autor son las CSS </li>
+</ul>
+<p>Las reglas de estilo de usuario son menos importantes para el navegador, de cara al orden de precedencia o prioridad. <br>
+Es decir, en caso que en las reglas de estilo de usuario y de autor se defina una misma propiedad de estilos CSS,<br>
+la que se tiene en cuenta es la regla de estilo de autor, osea, lo que haya configurado el diseñador de la pá<gina class="br"></gina>
+Sin embargo, esto se puede cambiar puntualmente si el usuario lo desea. </p><br>
+<p>important! se puede utilizar en las hojas de estilo de usuario, para que cada persona pueda definir para su propio navegador si lo desea,<br>
+  un estilo CSS por defecto que se tenga en cuenta en todas las web que visitemos. Este caso ya se explicó en el artículo Reglas de estilo CSS <br>
+  de usuario y de autor. <br>
+
+    Uso y efecto de la declaración !important <br>
+    
+    Para utilizar !important en una regla de estilo, siempre se coloca en la parte del valor del atributo, antes del punto y coma ";"<div class="br"></div>
+    <code> body{ font-family: verdana, arial !important; }
+</code>
+    </p>
+
+    <p>
+
+
+      La excepción !important
+Cuando se utiliza una regla en una declaración de estilo, esta declaración reemplaza cualquier otra declaración. 
+Aunque técnicamente no tiene nada que ver con la especificidad, interactúa directamente con ella. 
+El uso es una mala práctica y debe evitarse porque dificulta la depuración al interrumpir la cascada natural en las hojas de estilo.
+Cuando se aplican dos declaraciones en conflicto con la regla al mismo elemento, se aplicará la declaración con una mayor especificidad.
+important!important!important,!important
+    </p>
+
+       
+    <table border="1" style="width: 250px;" >
+        
+       <thead style="background-color: skyblue;" >
+        <th>Nivel de importacncia</th><th> origen</th> <th>!important</th>
+       </thead> 
+       <tbody>
+        <tr><td>1</td><td>user agent</td><td> </td> </tr>       
+        <tr><td>2</td><td>user agent</td><td> !important</td> </tr> 
+        <tr><td>3</td><td>user </td><td> </td> </tr>
+        <tr><td>4</td><td>autor</td><td> </td> </tr>
+        <tr><td>5</td><td>autor</td><td>!important </td> </tr>
+    </tbody>
+    <tfoot>
+        <tr><td>6</td><td>user </td><td>!important </td> </tr>
+    </tfoot>
+    </table>
+
+<h1 class="display-5">Reglas-at</h1>
+<p><span class="seoSummary">Una <strong>regla-at</strong> es una <a href="/en-US/docs/Web/CSS/Syntax#CSS_statements">declaración CSS</a> que comienza con el símbolo arroba, '@', seguido por un identificador, e incluye todo el contenido hasta el siguiente punto y coma, ';' o el siguiente <a href="/en-US/docs/Web/CSS/Syntax#CSS_declarations_blocks">bloque CSS</a>, lo que sea primero.</span></p>
+<p>Hay varias reglas-at designadas por sus identificadores, cada una con sintaxis distinta:</p>
+
+
+<ul>
+ <li><a href="https://developer.mozilla.org/es/docs/Web/CSS/@charset" title="La regla-at @charset de CSS especifica la codificación de caracteres usada en la hoja de estilos. Éste debe ser el primer elemento en la hoja de estilos, y no debe ser precedidad por ningun otro caracter; al no ser una declaración anidada, no puede ser usada dentro de grupos de reglas-at condicionales. Si se definen varias reglas-at @charset, solamente se usará la primera. La regla-at @charset no puede ser usada dentro de un atributo style style en un elemento HTML o dentro del elemento &lt;style> , ya que en estos casos se tomará en cuenta la codificación de la página HTML contenedora."><code>@charset</code></a> — Define el conjunto de caracteres usado por la hoja de estilos.</li>
+ <li><code>@charset "UTF-8";</code></li> <br>
+ <li><a href="https://developer.mozilla.org/es/docs/Web/CSS/@import" title="La regla-at CSS @import  permite importar reglas desde otras hojas de estilo. Estas reglas deben preceder a todos los otros tipos de reglas, excepto a las reglas @charset; como esto no es una declaración anidada, no puede ser usado dentro de grupos condicionales de reglas-at."><code>@import</code></a> — Indica al motor de CSS que incluya una hoja de estilos externa.</li>
+ <li><code>@import url; /* Representa la ubicación del recurso a importar. La url puede ser absoluta o relativa. */
+    @import url list-of-media-queries;
+    @import url("fineprint.css") print;
+    @import 'custom.css';<br>
+    Es una lista separada por comas de consultas de medios (media query) 
+    que condicionan la aplicación de las reglas CSS definidas en el enlace url.
+
+
+    La declaración !important asociada al estilo de un elemento ignora la especificidad del resto de estilos aplicados a ese elemento y aplica los estilos marcados con dicha declaració
+    .</code></li><br>
+ <li><a rel="nofollow" href="https://developer.mozilla.org/es/docs/Web/CSS/@namespace" class="new" title="La documentación acerca de este tema no ha sido escrita todavía . ¡Por favor  considera contribuir !"><code>@namespace</code></a> — Indica al motor de CSS que todo el contenido usa como prefijo un espacio de nombres XML.</li>
+ <li><code>@namespace url(XML-namespace-URL); @namespace "XML-namespace-URL"</code></li><br>
+ <li><strong><em>Reglas-at anidadas</em></strong> — Un subconjunto de declaraciones anidadas, que pueden ser usadas como declaraciones de estilos, así como grupos de reglas condicionadas internas:
+  <ul>
+   <li><a href="https://developer.mozilla.org/es/docs/Web/CSS/@media" title="La regla-at CSS @media asocia un grupo de declaraciones anidadas, en un bloque CSS delimitado por llaves, con una condición definida por un media query. La regla-at @media puede ser usada no solo en el nivel superior de la hoja de estilos, sino también dentro de cualquier grupo de reglas conditionales."><code>@media</code></a> — Un grupo de reglas condicional que aplicará su contenido si el dispositivo cumple los criterios de las condiciones definidas usando un <em>media query</em>.</li>
+   <li><code>@media &#60;media-query-list> {
+    &#60;group-rule-body>
+  }</code></li><br>
+   <li><a href="https://developer.mozilla.org/es/docs/Web/CSS/@supports" title='La regla "CSS @supports"asocia un conjunto de declaraciones anidadas en un bloque CSS (que está delimitado por corchetes) con una condición consistente en probar declaraciones de CSS (es decir, pares propiedad-valor, así como conjunciones, disjunciones o negaciones abritrarias sobre ellas). A esas condiciones se le llama condición "soporta" (supports condition).'><code>@supports</code></a> <span title="This is an experimental API that should not be used in production code."><i class="icon-beaker"> </i></span> — Un grupo de reglas condicional que aplicará su contenido si el navegador cumple los criterios de la condición dada.</li>
+   <li><a href="https://developer.mozilla.org/es/docs/Web/CSS/@document" title="The @document CSS at-rule restricts the style rules contained within it based on the URL of the document. It is designed primarily for user-defined style sheets, though it can be used on author-defined style sheets, too."><code>@document</code></a> <span title="This is an experimental API that should not be used in production code."><i class="icon-beaker"> </i></span> — Un grupo de reglas condicionadas que aplicará su contenido si el documento donde se aplica la hoja de estilos cumple los criterios de la condición dada. <em>(diferida al Nivel 4 de la Especificación CSS)</em></li>
+   <li><code>@document url("https://www.example.com/") { h1 {color: green; }
+  }</code></li><br>
+   <li><a href="https://developer.mozilla.org/es/docs/Web/CSS/@page" title="La regla @page es usada para modificar algunas propiedades CSS cuando se va a imprimir una página web. No se pueden cambiar todas las propiedades CSS con @page, solo los márgenes, las líneas viudas, huérfanas y los saltos de página. Cualquier intento de cambiar otra propiedad será ignorada."><code>@page</code></a> — Describe los cambios en la disposición de la página que serán aplicados al imprimir el documento.</li>
+   <li><code>@page &#60;page-selector-list> {&#60;page-body> }</code></li><br>
+   <li><a href="https://developer.mozilla.org/es/docs/Web/CSS/@font-face" title="@font-face permite al autor especificar fuentes online para visualizar en sus páginas web. Al permitir a los autores proporcionar sus propias fuentes, @font-face elimina la necesidad de depender del numero limitado de fuentes de usuarios instaladas en sus computadoras."><code>@font-face</code></a> — Describe la configuración de fuentes externas que se descargarán.</li>
+   <li><pre><code>
+    @font-face {font-family: "Bitstream Vera Serif Bold";
+    src: url("http://developer.mozilla.org/@api/deki/files/2934/=VeraSeBd.ttf");
+  }</code></pre></li><br>
+   <li><a href="https://developer.mozilla.org/es/docs/Web/CSS/@keyframes" title="La regla arroba @keyframes permite a los autores controlar los pasos intermedios en una secuencia de animación CSS mediante el establecimiento de keyframes (o puntos de trayectoria) a lo largo de la secuencia de animación que debe ser alcanzado por determinados puntos durante la animación. Esto le da un control más específico sobre los pasos intermedios de la secuencia de animación que se obtiene al dejar que el navegador maneje todo automáticamente."><code>@keyframes</code></a> <span title="This is an experimental API that should not be used in production code."><i class="icon-beaker"> </i></span> — Describe la configuración de pasos intermedios en una secuencia de animación CSS.</li>
+   <li><code><pre>
+
+    Reglas de @
+    (Reglas-At o at-rules)
+    
+    Son declaraciones CSS que encapsulan un grupo de reglas, pero no están directamente relacionadas a elementos HTML/XML. Controlan la forma en que se aplican los estilos extendiendo la capacidad de CSS y cada una tiene su propia sintaxis.
+    
+    Reglas generales
+    
+    Se aplican a todo el CSS
+    
+    @charset Define el conjunto de caracteres usado en el CSS.
+    @import Permite incluir otro CSS.
+    @namespace Establece el XML a ser usado.
+    Reglas anidadas
+    
+    Pueden estar como declaración de estilo o como condicionales.
+    
+    @media Establece reglas condicionales de acuerdo a las características del dispositivos de salida (tamaño de pantalla, tipo de impresora, dispositivos braille, etc.)
+
+    all
+    
+    Aplicable a todos los dispositivos.
+
+    print
+
+    Destinado material paginado y para documentos visibles en pantalla en modo de vista previa para impresión. 
+  
+    screen
+
+    Destinado a principalmente a pantallas de computadora a color.
+
+        speech
+
+    Destinado a sintetizadores de voz. Nota: CSS2 tenía un tipo de medio similar llamado 'aural' para este propósito. 
+    V
+
+    @supports Establece reglas condicionales según el navegador utilizado.
+    @document Restringe las reglas contenidas según la URL. @document url("https://www.example.com/") { h1 {   color: green; } }    
+    @page Restringe las reglas contenidas para cuando se quiere imprimir (en impresora) el documento.
+    @font-face Incluye fuentes (tipográficas) externas.
+    @keyframes Controla los pasos intermedios en una secuencia de animación.
+    @viewport Restringe las reglas según el tamaño y orientación de la ventana, especialmente útiles en celulares.
+    @counter-style Define estilos de contador específicos.sólo implementada en Gekko Motor de renderizado
+    @font-feature-values, @swash, @ornaments, @annotation, @stylistic, @styleset y @character-variant Define nombre
+
+
+
+@keyframes identifier {
+    0% { top: 0; left: 0; }
+    30% { top: 50px; }
+    68%, 72% { left: 50px; }
+    100% { top: 100px; left: 100%; }
+    }
+   </pre></code></li><br>
+   <li><a href="https://developer.mozilla.org/es/docs/Web/CSS/@viewport" title="The @viewport CSS at-rule contains a set of nested descriptors in a CSS block that is delimited by curly braces. These descriptors control viewport settings, primarily on mobile devices."><code>@viewport</code></a> <span title="This is an experimental API that should not be used in production code."><i class="icon-beaker"> </i></span> — Describe los aspectos del viewport para dispositivos de pantalla pequeña. <em>(actualmente en Borrador)</em></li>
+   <li><code><pre>
+@viewport {
+   &#60;group-rule-body>
+  }
+  
+  @viewport {
+    min-width: 640px;
+    max-width: 800px;
+  }
+@viewport {
+    zoom: 0.75;
+    min-zoom: 0.5;
+    max-zoom: 0.9;
+  }
+@viewport {
+    orientation: landscape;
+  }</pre></code></li><br>
+
+   <li><a href="https://developer.mozilla.org/es/docs/Web/CSS/@counter-style" title="The @counter-style CSS at-rule lets authors define specific counter styles that are not part of the predefined set of styles. A @counter-style rule defines how to convert a counter value into a string representation."><code>@counter-style</code></a> — Define estilos de contador específicos que no son parte de los conjuntos de estilos predeterminados. <em>(en estado de Recomendación Candidata, pero sólo implementada en Gekko al momento de esta publicación)</em></li>
+   <li><code><pre>
+@counter-style circled-alpha {
+    system: fixed;
+    symbols: Ⓐ Ⓑ Ⓒ Ⓓ Ⓔ Ⓕ Ⓖ Ⓗ Ⓘ Ⓙ Ⓚ Ⓛ Ⓜ Ⓝ Ⓞ Ⓟ Ⓠ Ⓡ Ⓢ Ⓣ Ⓤ Ⓥ Ⓦ Ⓧ Ⓨ Ⓩ;
+    suffix: " ";
+  }</pre></code></li><br>
+   <li><a href="https://developer.mozilla.org/es/docs/Web/CSS/@font-feature-values" title="La regla-at CSS @font-feature-values permite a los autores usar un nombre común de font-variant-alternates para características activadas de distintas formas en OpenType. Permite simplificar el código CSS cuando se usan distintas fuentes."><code>@font-feature-values</code></a> (junto con <code>@swash</code>, <code>@ornaments</code>, <code>@annotation</code>, <code>@stylistic</code>, <code>@styleset</code> y <code>@character-variant</code>)<br>
+   Define nombres comunes para la propiedad <a href="https://developer.mozilla.org/es/docs/Web/CSS/font-variant-alternates" title="La propiedad CSS font-variant-alternates controla el uso de glifos alternos. Estos glifos alternos pueden ser referenciados por nombres alternativos en @font-feature-values."><code>font-variant-alternates</code></a>. </li>
+   <li>pero sólo implementada en Gekko al momento de esta publicación)
+  </li>
+ 
+<li><code><pre>
+@font-feature-values Font One { /* Cómo activar nice-style en Font One */
+    @styleset {
+      nice-style: 12;
+    }
+  }
+   
+  @font-feature-values Font Two { /* Cómo activar nice-style en Font Two */
+    @styleset {
+      nice-style: 4;
+    }
+  } </pre></code></li>   <br> 
+</li>        
+  </ul>
+ </li>
+</ul>
+
+<h1 class="display-5">Grupos de Reglas Condicionales</h1>
+
+<p>Así como los valores de las propiedades, cada regla-at tiene sintaxis propia.  <br>
+  Sin embargo, muchas de esas reglas pueden ser agrupadas en categorías especiales, llamadas <strong>conditional group rules</strong>. <br>
+   Estas declaraciones comparten sintáxis común y cada una puede incluir <em>nested statements</em>—ya sean <em>conjuntos de reglas</em> o <em>reglas-at anidadas</em>. <br>
+   Además, pueden transmitir un significado semántico común—todas incluyen algun tipo de condición, que devuelve un resultado que puede ser <strong>verdadero</strong> o <strong>falso</strong>. <br>
+    Si el valor de la condición resulta <strong>verdadero</strong>, todas las declaraciones del grupo serán aplicadas.</p>
+
+<p>Los grupos de reglas condicionales están definidos en <a rel="noopener" href="http://dev.w3.org/csswg/css3-conditional/" class="external">CSS Conditionals Level 3</a> y son:</p>
+
+<ul>
+ <li><a href="https://developer.mozilla.org/es/docs/Web/CSS/@media" title="La regla-at CSS @media asocia un grupo de declaraciones anidadas, en un bloque CSS delimitado por llaves, con una condición definida por un media query. La regla-at @media puede ser usada no solo en el nivel superior de la hoja de estilos, sino también dentro de cualquier grupo de reglas conditionales."><code>@media</code></a>,</li>
+ <li><a href="https://developer.mozilla.org/es/docs/Web/CSS/@supports" title='La regla "CSS @supports"asocia un conjunto de declaraciones anidadas en un bloque CSS (que está delimitado por corchetes) con una condición consistente en probar declaraciones de CSS (es decir, pares propiedad-valor, así como conjunciones, disjunciones o negaciones abritrarias sobre ellas). A esas condiciones se le llama condición "soporta" (supports condition).'><code>@supports</code></a>,</li>
+ <li><a href="https://developer.mozilla.org/es/docs/Web/CSS/@document" title="The @document CSS at-rule restricts the style rules contained within it based on the URL of the document. It is designed primarily for user-defined style sheets, though it can be used on author-defined style sheets, too."><code>@document</code></a>. <em>(diferida al Nivel 4 de la Especificación CSS) </em></li>
+</ul>
+
+<p>Como cada grupo de condición puede incluir también declaraciones anidadas, puede haber un número de anidaciones ilimitado.</p>
+
+
+
+</main>
+<hr class=my-3>
+<footer class=bg-primary >
+
+
+    <p id='copyright'>Copyright &copy; 2020 Armand  🧑🏻‍</p>
+        <p id='credits'>Layout por Armand 💻 </p></div>
+
+    </footer>
+    <hr class=my-3>
+
+<script src=https://code.jquery.com/jquery-3.2.1.slim.min.js integrity=sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN crossorigin=anonymous></script>
+<script src=https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js integrity=sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q crossorigin=anonymous></script>
+<script src=https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js integrity=sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl crossorigin=anonymous></script>
+</body>
+</html>
