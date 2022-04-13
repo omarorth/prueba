@@ -4,7 +4,7 @@
 }
 
 .tablaProductos caption {
-    
+    font-weight: bold;
     font-size: 2.0rem;
     padding: 10px;
 }
@@ -19,4 +19,5 @@
 
 .tablaProductos table td {
     border: 1px dotted gray;
+    text-align: center;
 }

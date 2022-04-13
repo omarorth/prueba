@@ -1,0 +1,226 @@
+<!-- https://developer.mozilla.org/es/docs/Web/HTTP/Methods -->
+
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="utf-8">
+        <title>Formulario</title>
+    </head>
+    <body>
+        <h1>Formulario</h1>
+        <fieldset>
+            <form method="post" action="registro.php">
+                <label for="nombre"> Nombre</label>
+                <input type="text" id="nombre" placeholder="Escribe tu nombre" required>                                        
+                <br><br>
+                <label for="apellidoPaterno">Apellido Paterno</label>
+                <input type="text" id="apellidoPaterno" required>
+                <br>
+                <label for="apellidoMaterno">Apellido Materno</label>
+                <input type="text" id="apellidoMaterno">
+                <br>
+                <label for="email">Correo Electronico</label>
+                <input type="text" id="email">
+                <br>
+                <label for="contrasena">Contraseña</label>
+                <input type="password" id="contrasena" required>
+                <br>
+                <input type="submit" value="Enviar">
+            </form>
+        </fieldset>
+        <h1>Alta de producto</h1>
+        <fieldset>
+            <form action="registro.php" method="post">
+                <label for="codigo">Codigo</label>
+                <input type="text" id="codigo" required>
+                <br><br>
+                <label for="cantidad">Cantidad</label>
+                <input type="number" id="cantidad" required>
+                <br><br>
+                <label for="descripcion">Descripcion</label>
+                <input type="text" id="descripcion" required>
+                <br><br>
+                <label for="color">Color</label>
+                <input type="text" id="color" required>
+                <br><br>
+                <label for="talla">Talla</label>
+                <input type="number" id="talla" required>
+                <br><br>
+                <label for="precio">Precio</label>
+                <input type="number" id="precio" required>
+                <br><br>
+                <input type="submit" value="Enviar">
+            </form>
+        </fieldset>
+        <h1>Tipos de campos</h1>
+        <fieldset>
+            <form action="registro.php" method="post">
+                <input type="button"> boton <br>
+                <input type="radio"> radio <br>
+                <input type="checkbox"> checkbox <br>
+                <input type="color"> color <br>
+                <input type="date"> fecha <br>
+                <input type="datetime-local"> dia y hora <br>
+                <input type="email"> email <br>
+                <input type="file"> archivo <br>
+                <input type="hidden"> oculto
+                <input type="image"> imagen <br>
+                <input type="month"> mes <br>
+                <input type="number"> numero <br>
+                <input type="password"> contraseña <br>
+                <input type="range"> rango <br>
+                <input type="reset"> reset <br>
+                <input type="search" placeholder="iniciar busqueda"> busqueda <br>
+                <input type="submit"> envio del formulario <br>
+                <input type="tel"> telefono <br>
+                <input type="text"> texto <br>
+                <input type="time"> hora <br>
+                <input type="url"> http <br>
+                <textarea name="" id="" cols="30" rows="10"></textarea>
+            </form>
+        </fieldset>
+
+        <h1>Solicitud de tarjeta de credito</h1>
+        <h2>Datos personales</h2>
+        <form action="solicitud_tdc.php" method="post">
+            <fieldset>
+                <label for="nombres">Nombre (s):*</label>
+                <input type="text" id="nombres" size="20" placeholder="Nombre (s)" required>
+                <br><br>
+                <label for="apellidoPat">Apellido Paterno:*</label>
+                <input type="text" id="apellidoPat" size="15" placeholder="Apellido Paterno" required>
+                <br><br>
+                <label for="apellidoMat">Apellido Materno:</label>
+                <input type="text" id="apellidoMat" size="15" placeholder="Apellido Materno">
+                <br><br>
+                <label for="correo">Correo Electrónico:*</label>
+                <input type="email" id="correo" size="20" placeholder="Correo Electrónico" required>
+                <br><br>
+                <label for="confirmaCorreo">Confirmación Correo Electrónico:*</label>
+                <input type="email" id="confirmaCorreo" size="20" placeholder="Correo Electrónico" required>
+                <br><br>
+                <label for="fechaNacimiento">Fecha de Nacimiento:*</label>
+                <input type="date" id="fechaNacimiento" required>
+                <br><br>
+                <label for="rfc">RFC:*</label>
+                <input type="text" id="rfc" size="13" placeholder="RFC" required>
+                <br><br>
+                <label for="genero">Género:*</label>
+                <!-- <input type="text" id="genero" size="1" placeholder="H / M" required> programar posteriormente datalist -->
+                <select name="genero" id="genero">
+                    <option value="0" label="Selecciona tu genero"></option>
+                    <option value="1">F</option>
+                    <option value="2">M</option>
+                </select>
+                <br><br>
+                <label for="pais">País de Nacionalidad:*</label>
+                <input type="text" id="pais" size="15" placeholder="País de Origen" required>
+                <br><br>
+                <label for="paisNacimiento">País de Nacimiento:*</label>
+
+            </fieldset>
+            <h2>Información Domiciliaria</h2>
+            <fieldset>
+                <label for="calle">Calle:*</label>
+                <input type="text" id="calle" size="20" placeholder="Calle" required size="20">
+                <br><br>
+                <label for="numExterior">No. Exterior:*</label>
+                <input type="number" id="numExterior" size="6" min="1" max="4" placeholder="Número exterior" required>
+                <br><br>
+                <label for="numInterior">No. Interior:</label>
+                <input type="text" id="numInterior" size="6" placeholder="Número interior">
+                <br><br>
+                <label for="cp">C.P.:*</label>
+                <input type="number" id="cp" size="5" placeholder="Código Postal" required>
+                <br><br>
+                <label for="estado">Estado:*</label>
+                <input type="text" id="estado" size="25" placeholder="Estado" required>
+                <br><br>
+                <label for="delegacionMunicipio">Delegación o Municipio:*</label>
+                <input type="text" id="delegacionMunicipio" size="20" placeholder="Delegacion o Municipio"
+                    required>
+                <br><br>
+                <label for="colonia">Colonia:*</label>
+                <input type="text" id="colonia" size="25" placeholder="Colonia" required>
+                <br><br>
+                <label for="tipoVivienda">Tipo de Vivienda:*</label>
+                <!-- <input type="texto" id="tipoVivienda" placeholder="Tipo de vivienda" required> -->
+                <select name="tipoVivienda" id="tipoVivienda">
+                    <option value="0" label="Selecciona tipo vivienda"></option>
+                    <option value="1">Propia</option>
+                    <option value="2">Rentada</option>
+                </select>
+                <br><br>
+                <label for="tiempoResidenciaAnios">Tiempo de Residencia (años):*</label>
+                <!-- <input type="number" id="tiempoResidenciaAnios" size="2" placeholder="Tiempo de residencia (años)"
+                    required> -->
+                <select name="tiempoResidenciaAnios" id="tiempoResidenciaAnios">
+                    <optgroup label="Años Residencia">
+                        <option value="1">Menos de 1 año</option>
+                        <option value="2">De 1 a 3 años</option>
+                        <option value="3">De 3 a 5 años</option>
+                        <option value="4">De 5 a 10 años</option>
+                        <option value="5">Más de 10 años</option>
+                    </optgroup>
+                </select>
+                <br><br>
+                <label for="telDomicilio">Teléfono Domicilio:*</label>
+                <input type="number" id="telDomicilio" size="10" placeholder="Teléfono domicilio" required>
+                <br><br>
+                <label for="telCelular">Teléfono Celular (10 dígitos):*</label>
+                <input type="number" id="telCelular" size="10" placeholder="Teléfono celular (10 dígitos)
+                    required">
+            </fieldset>
+            <fieldset>
+                <legend>Genero</legend>
+                    <label for="genero"></label>
+                    <select name="genero" id="genero">
+                        <option value="0" label="Selecciona tu genero   "></option>
+                        <option value="1">Femenino</option>
+                        <option value="2">Masculino</option>
+                    </select>
+            </fieldset>
+            <fieldset>
+                <legend>Datalist</legend>
+                <label>Selecciona tu navegador:
+                    <input list="browsers" name="myBrowser">
+                </label>
+                <datalist id="browsers">
+                    <option value="safari">
+                    <option value="firefox">
+                    <option value="internet explorer">
+                </datalist>
+            </fieldset>
+            <fieldset>
+                <legend>Mascotas</legend>
+                <label for="mascotas">Soy</label>
+                <select name="mascotas" id="mascotas">
+                    <optgroup label="mascotas">
+                        <option value="1">perro</option>
+                        <option value="2">gato</option>
+                        <option value="3">pez</option>
+                    </optgroup>
+                    <optgroup label="humanos">
+                        <option value="4">hombre</option>
+                        <option value="5">mujer</option>
+                        <option value="6">niño</option>
+                    </optgroup>
+                </select>
+            </fieldset>
+            <fieldset>
+                <legend>Continentes</legend>
+                <label for="continente">Continentes:</label>
+                <select name="continentes" id="continentes">
+                    <optgroup label="Continentes">
+                        <option value="1">África</option>
+                        <option value="2">América</option>
+                        <option value="3">Asia</option>
+                        <option value="4">Europa</option>
+                        <option value="5">Oceanía</option>
+                    </optgroup>
+                </select>
+            </fieldset>
+            <input type="submit" value="Enviar">
+        </form>
+    </body>
+</html>
