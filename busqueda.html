@@ -1,0 +1,34 @@
+<!DOCTYPE HTML>
+<html lang="es">
+    <head>
+        <meta charset="utf-8">
+        <title>Búsqueda</title>
+    </head>
+    <body>
+        <h1>Búsqueda</h1>
+        <fieldset>
+            <legend>Búsqueda IBM</legend>
+            <form method="Get" action="http://www.google.com/custom">                
+                <input type="hidden" name="domains" value="www.ibm.com">
+                <input type="hidden" name="cof" value=""> <!-- cof = configuración -->
+                <input name="q" size="10" maxlength="255"> <!-- q = query-->
+                <button type="submit" name="sa" > go </button>
+                <input type="radio" name="sitesearch" value="www.ibm.com"> en el sitio
+                <input type="radio" name="sitesearch" value> en toda la web
+            </form>
+        </fieldset>
+        <br>
+        <fieldset>
+            <legend>Búsqueda PDF Drive</legend>
+            <form method="Get" action="http://www.google.com/custom">
+                <input type="hidden" name="domains" value="http://www.pdfdrive.com/">
+                <input type="hidden" name="cof" value="">
+                <input name="q" size="10" maxlength="255">
+                <input type="submit" name="sa" value="buscar">
+                <input type="button" name="sitesearch" value="http://www.pdfdrive.com/">
+                    en el sitio
+                <input type="button" name="sitesearch" value> en toda la web
+            </form>
+        </fieldset>
+    </body>
+</html>
